@@ -1,0 +1,9 @@
+.\flash\table_verdanaz_30_4bpp.o: ../../generated/fonts/src/table_verdanaz_30_4bpp.cpp
+.\flash\table_verdanaz_30_4bpp.o: ../../touchgfx/framework/include/touchgfx/Font.hpp
+.\flash\table_verdanaz_30_4bpp.o: ../../touchgfx/framework/include/touchgfx/TextProvider.hpp
+.\flash\table_verdanaz_30_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\flash\table_verdanaz_30_4bpp.o: ../../touchgfx/framework/include/touchgfx/Unicode.hpp
+.\flash\table_verdanaz_30_4bpp.o: ../../touchgfx/framework/include/touchgfx/hal/Types.hpp
+.\flash\table_verdanaz_30_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\table_verdanaz_30_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\flash\table_verdanaz_30_4bpp.o: ../../touchgfx/framework/include/touchgfx/hal/Config.hpp

@@ -1,0 +1,7 @@
+Converting images
+Linking build/bin/target.elf
+Producing additional output formats...
+  target.hex   - Combined internal+external hex
+  intflash.elf - Internal flash, elf debug
+  intflash.hex - Internal flash, hex
+  extflash.bin - External flash, binary

@@ -7,6 +7,9 @@
 //*******************************************************
 //   Define Queue handles
 //*******************************************************
+//*******************************************************
+//   Define Queue handles
+//*******************************************************
 xQueueHandle led_msg_q = 0;
 extern xQueueHandle gui_msg_q;
 
@@ -41,10 +44,10 @@ void led_task(void* params)
 		{
 			switch(msg)
 			{
-				case LED_ON:
+				case 1://LED_ON:
 					BSP_LED_On(led_type);
 					break;
-				case LED_OFF:
+				case 2://LED_OFF:
 					BSP_LED_Off(led_type);
 					break;
 				default:

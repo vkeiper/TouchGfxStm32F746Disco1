@@ -17,18 +17,46 @@ Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
 CPU DLL:         SARMCM3.DLL V5.25.2.0
 Dialog DLL:      DCM.DLL V1.17.1.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.29.0
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-C:\TouchGFXProjects\TouchGfxStm32F746Disco1\target\Keil\application.uvprojx
-Project File Date:  11/07/2018
+C:\TouchGFXProjects\Git\TouchGfxStm32F746Disco1\target\Keil\application.uvprojx
+Project File Date:  11/17/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F746G-DISCO'
+compiling btntask.c...
+compiling main.cpp...
+compiling queue.c...
+compiling tasks.c...
+compiling list.c...
+compiling croutine.c...
+compiling ledtask.c...
+..\bsp\source\ledtask.c(58): warning:  #1-D: last line of file ends without a newline
+  }
+..\bsp\source\ledtask.c: 1 warning, 0 errors
+compiling event_groups.c...
+compiling port.c...
+../os/FreeRTOS8.2.0/Source/portable/RVDS/ST_CM7/port.c(386): warning:  #1215-D: #warning directive: Must read VFP type.
+  #warning Must read VFP type.
+../os/FreeRTOS8.2.0/Source/portable/RVDS/ST_CM7/port.c: 1 warning, 0 errors
+compiling trcStreamingPort.c...
+compiling timers.c...
+compiling OSWrappers.cpp...
+compiling trcKernelPort.c...
+compiling Model.cpp...
+../../gui/src/model/model.cpp(77): warning:  #177-D: variable "old"  was declared but never referenced
+      static uint32_t old = 0;
+../../gui/src/model/model.cpp: 1 warning, 0 errors
+compiling trcStreamingRecorder.c...
+compiling heap_2.c...
+linking...
+Program Size: Code=78602 RO-data=1730410 RW-data=580 ZI-data=33316  
+FromELF: creating hex file...
 After Build - User command #1: fromelf --only=ExtFlashSection --bin --output=binary .\Flash\application.axf
-".\Flash\application.axf" - 0 Error(s), 0 Warning(s).
+".\Flash\application.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -42,7 +70,7 @@ Package Vendor: Keil
   C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:12
 </pre>
 </body>
 </html>

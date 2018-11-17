@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>ST STM32F756xx USE_FREERTOS_8 USE_OS_SYSTICK USE_STM32746G_DISCOVERY USE_BPP=16</Define>
               <Undefine></Undefine>
-              <IncludePath>../../touchgfx/framework/include;../../gui/include;../../platform/os;../../generated/fonts/include;../../generated/images/include;../../generated/texts/include;../../generated/gui_generated/include;../bsp/include;../bsp/include/platform/core/arm/cortex-m/CMSIS;../bsp/include/platform/stm32f7xx;../bsp/include/platform/stm32f7xx/CMSIS;../bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver;../bsp/include;../bsp/include/vendor;../bsp/source/vendor/STM32746G-Discovery;../os/FreeRTOS8.2.0/Source/include;../os/FreeRTOS8.2.0/Source/portable/RVDS/ST_CM7</IncludePath>
+              <IncludePath>../../touchgfx/framework/include;../../gui/include;../../platform/os;../../generated/fonts/include;../../generated/images/include;../../generated/texts/include;../../generated/gui_generated/include;../bsp/include;../bsp/include/platform/core/arm/cortex-m/CMSIS;../bsp/include/platform/stm32f7xx;../bsp/include/platform/stm32f7xx/CMSIS;../bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver;../bsp/include;../bsp/include/vendor;../bsp/source/vendor/STM32746G-Discovery;../os/FreeRTOS8.2.0/Source/include;../os/FreeRTOS8.2.0/Source/portable/RVDS/ST_CM7;..\TraceRecorder\include;..\TraceRecorder\config;..\TraceRecorder\streamports\Jlink_RTT\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -395,6 +395,16 @@
               <FileName>startup_stm32f746xx.s</FileName>
               <FileType>2</FileType>
               <FilePath>../bsp/source/platform/stm32f7xx/Keil/startup_stm32f746xx.s</FilePath>
+            </File>
+            <File>
+              <FileName>btntask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\source\btntask.c</FilePath>
+            </File>
+            <File>
+              <FileName>ledtask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\source\ledtask.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1210,6 +1220,31 @@
               <FileName>TypedTextDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../../generated/texts/src/typedtextdatabase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Trace</GroupName>
+          <Files>
+            <File>
+              <FileName>trcKernelPort.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\trcKernelPort.c</FilePath>
+            </File>
+            <File>
+              <FileName>trcStreamingRecorder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\trcStreamingRecorder.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_RTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\streamports\Jlink_RTT\SEGGER_RTT.c</FilePath>
+            </File>
+            <File>
+              <FileName>trcStreamingPort.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TraceRecorder\streamports\Jlink_RTT\trcStreamingPort.c</FilePath>
             </File>
           </Files>
         </Group>

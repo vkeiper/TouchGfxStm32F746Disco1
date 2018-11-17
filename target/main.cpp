@@ -43,11 +43,15 @@ using namespace touchgfx;
 #include "task.h"
 #include "queue.h"
 #include "stm32746g_discovery.h"
-//extern "C"
-//{
-//	#include "./bsp/include/ledtask.h"
-//	#include "./bsp/include/btntask.h"
-//}
+
+extern "C"
+{
+	#include "./bsp/include/ledtask.h"
+	#include "./bsp/include/btntask.h"
+	extern xQueueHandle led_msg_q;
+	extern xQueueHandle btn_msg_q;
+
+}
 
 /* Message interface between UI and LED Task */
 
@@ -67,108 +71,108 @@ static void GUITask(void* params)
     touchgfx::HAL::getInstance()->taskEntry();
 }
 
+////*******************************************************
+////   Define Queue handles
+////*******************************************************
+//xQueueHandle led_msg_q = 0;
+//extern xQueueHandle gui_msg_q;
+
+//void led_task(void* params)
+//{
+//	uint8_t msg = 0;
+//	Led_TypeDef led_type = LED_GREEN;
+//	
+//	//*******************************************************
+//	// Init LED
+//	//*******************************************************
+//	//
+//	BSP_LED_Init(led_type);
+//    
+//  //*******************************************************
+//	//  Create queue of length 1
+//	//*******************************************************
+//	//
+//  led_msg_q = xQueueGenericCreate(1, 1, 0);
+
+//  //*******************************************************
+//	//  Event loop
+//  //
+//	//  Every 200ms, take an item off the queue and 
+//	//  toggle LED according to contents of msg
+//	//*******************************************************
+//	//	
+//  for(;;)
+//  {
+//		vTaskDelay(200);
+//		if (xQueueReceive(led_msg_q, &msg, 0) == pdTRUE)
+//		{
+//			switch(msg)
+//			{
+//				case 1://LED_ON:
+//					BSP_LED_On(led_type);
+//					break;
+//				case 2://LED_OFF:
+//					BSP_LED_Off(led_type);
+//					break;
+//				default:
+//					break;
+//			}
+//		}			
+//	}
+//}
+
+
+
 //*******************************************************
 //   Define Queue handles
 //*******************************************************
-xQueueHandle led_msg_q = 0;
-extern xQueueHandle gui_msg_q;
+// xQueueHandle btn_msg_q = 0;
 
-void led_task(void* params)
-{
-	uint8_t msg = 0;
-	Led_TypeDef led_type = LED_GREEN;
-	
-	//*******************************************************
-	// Init LED
-	//*******************************************************
-	//
-	BSP_LED_Init(led_type);
-    
-  //*******************************************************
-	//  Create queue of length 1
-	//*******************************************************
-	//
-  led_msg_q = xQueueGenericCreate(1, 1, 0);
+////gui message queue
+//extern xQueueHandle gui_msg_q;
+//uint32_t last_btn_state = 0;
 
-  //*******************************************************
-	//  Event loop
-  //
-	//  Every 200ms, take an item off the queue and 
-	//  toggle LED according to contents of msg
-	//*******************************************************
-	//	
-  for(;;)
-  {
-		vTaskDelay(200);
-		if (xQueueReceive(led_msg_q, &msg, 0) == pdTRUE)
-		{
-			switch(msg)
-			{
-				case 1://LED_ON:
-					BSP_LED_On(led_type);
-					break;
-				case 2://LED_OFF:
-					BSP_LED_Off(led_type);
-					break;
-				default:
-					break;
-			}
-		}			
-	}
-}
+//void btn_task(void* params)
+//{  
+//	uint32_t btn_state = 0;
+//  uint8_t msg = 0;
+//	
+//  //*******************************************************
+//	//  GPIO MODE: Init BUTTON_USER
+//	//*******************************************************
+//	//
+//	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
+//	    
+//	//*******************************************************
+//	//  Create queue of length 1
+//	//*******************************************************
+//	//
+//  btn_msg_q = xQueueGenericCreate(1, 1, 0);
 
-
-
-//*******************************************************
-//   Define Queue handles
-//*******************************************************
-xQueueHandle btn_msg_q = 0;
-
-//gui message queue
-extern xQueueHandle gui_msg_q;
-uint32_t last_btn_state = 0;
-
-void btn_task(void* params)
-{  
-	uint32_t btn_state = 0;
-  uint8_t msg = 0;
-	
-  //*******************************************************
-	//  GPIO MODE: Init BUTTON_USER
-	//*******************************************************
-	//
-	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
-	    
-	//*******************************************************
-	//  Create queue of length 1
-	//*******************************************************
-	//
-  btn_msg_q = xQueueGenericCreate(1, 1, 0);
-
-	//*******************************************************
-	//  Event loop
-	//*******************************************************
-	//
-  for(;;)
-  {
-		vTaskDelay(50);
-		
-		//*******************************************************
-		//  Read state of button and only send message if pressed
-		//*******************************************************
-		//
-		btn_state = BSP_PB_GetState(BUTTON_KEY);   
-		if(btn_state == 1)
-		{
-			// Send empty message. Queue item implicitly means PRESSED.		
-			xQueueSend(gui_msg_q, &msg, 0);
-			while(1 == BSP_PB_GetState(BUTTON_KEY))
-			{
-					vTaskDelay(50);
-			}
-		}
-	}
-}
+//	//*******************************************************
+//	//  Event loop
+//	//*******************************************************
+//	//
+//  for(;;)
+//  {
+//		vTaskDelay(50);
+//		
+//		//*******************************************************
+//		//  Read state of button and only send message if pressed
+//		//*******************************************************
+//		//
+//		btn_state = BSP_PB_GetState(BUTTON_KEY);   
+//		if(btn_state == 1)
+//		{
+//			// Send empty message. Queue item implicitly means PRESSED.		
+//			xQueueSend(gui_msg_q, &msg, 0);
+//			while(1 == BSP_PB_GetState(BUTTON_KEY))
+//			{
+//					vTaskDelay(50);
+//			}
+//		}
+//	}
+//} 
 
 
 int main(void)
@@ -176,6 +180,7 @@ int main(void)
     hw_init();
     touchgfx_init();
 
+		vTraceEnable(TRC_START); 
 
     /**
      * IMPORTANT NOTICE!

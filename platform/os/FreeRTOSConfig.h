@@ -104,7 +104,7 @@ extern "C" {
 #define configMAX_PRIORITIES                    ( ( unsigned portBASE_TYPE ) 5 )
 #define TASKCREATE_NAME_TYPE                    signed char *
 #endif
-#define configMINIMAL_STACK_SIZE                ( ( unsigned short ) 64 )
+#define configMINIMAL_STACK_SIZE                ( ( unsigned short ) 128 )
 #define configTOTAL_HEAP_SIZE                   ( ( size_t ) ( 15360 ) )
 #define configMAX_TASK_NAME_LEN                 ( 10 )
 #define configUSE_TRACE_FACILITY                1
@@ -194,4 +194,7 @@ standard names. */
 #endif        
         
 #endif /* FREERTOS_CONFIG_H */
-
+/* Integrates the Tracealyzer recorder with FreeRTOS */
+#if ( configUSE_TRACE_FACILITY == 1 )
+#include "trcRecorder.h"
+#endif

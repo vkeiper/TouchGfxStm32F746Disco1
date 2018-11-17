@@ -221,7 +221,9 @@ board_c_files += \
 	$(bsp_path)/source/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_qspi.c \
 	$(bsp_path)/source/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_ll_fmc.c \
 	$(bsp_path)/source/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_ll_sdmmc.c \
-	$(bsp_path)/source/platform/stm32f7xx/CMSIS/system_stm32f7xx.c
+	$(bsp_path)/source/platform/stm32f7xx/CMSIS/system_stm32f7xx.c \
+	$(bsp_path)/source/btntask.c \
+	$(bsp_path)/source/ledtask.c 	
 
 board_cpp_files := \
 	$(bsp_path)/source/bsp/STM32F7Instrumentation.cpp \

@@ -2,6 +2,8 @@
 ".\flash\main.o"
 ".\flash\system_stm32f7xx.o"
 ".\flash\startup_stm32f746xx.o"
+".\flash\btntask.o"
+".\flash\ledtask.o"
 ".\flash\stm32f7dma.o"
 ".\flash\stm32f7hal.o"
 ".\flash\boardconfiguration.o"
@@ -158,6 +160,10 @@
 ".\flash\table_verdanaz_30_4bpp.o"
 ".\flash\texts.o"
 ".\flash\typedtextdatabase.o"
+".\flash\trckernelport.o"
+".\flash\trcstreamingrecorder.o"
+".\flash\segger_rtt.o"
+".\flash\trcstreamingport.o"
 --strict --scatter ".\Flash_QSPI.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

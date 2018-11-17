@@ -11,7 +11,7 @@ xQueueHandle btn_msg_q = 0;
 
 //gui message queue
 extern xQueueHandle gui_msg_q;
-uint32_t last_btn_state = 0;
+//uint32_t last_btn_state = 0;
 
 void btn_task(void* params)
 {  
@@ -45,8 +45,12 @@ void btn_task(void* params)
 		btn_state = BSP_PB_GetState(BUTTON_KEY);   
 		if(btn_state == 1)
 		{
-			// Send empty message. Queue item implicitly means PRESSED.
+			// Send empty message. Queue item implicitly means PRESSED.		
 			xQueueSend(gui_msg_q, &msg, 0);
+			while(1 == BSP_PB_GetState(BUTTON_KEY))
+			{
+					vTaskDelay(50);
+			}
 		}
 	}
 }

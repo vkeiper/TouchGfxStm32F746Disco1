@@ -53,6 +53,17 @@
 .\flash\ledtask.o: ../os/FreeRTOS8.2.0/Source/include/FreeRTOS.h
 .\flash\ledtask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\flash\ledtask.o: ../../platform/os/FreeRTOSConfig.h
+.\flash\ledtask.o: ..\TraceRecorder\include\trcRecorder.h
+.\flash\ledtask.o: ..\TraceRecorder\config\trcConfig.h
+.\flash\ledtask.o: ..\TraceRecorder\include\trcPortDefines.h
+.\flash\ledtask.o: ../bsp/include/platform/stm32f7xx/CMSIS/core_cm7.h
+.\flash\ledtask.o: ..\TraceRecorder\config\trcStreamingConfig.h
+.\flash\ledtask.o: ..\TraceRecorder\include\trcHardwarePort.h
+.\flash\ledtask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h
+.\flash\ledtask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h
+.\flash\ledtask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h
+.\flash\ledtask.o: ..\TraceRecorder\include\trcKernelPort.h
+.\flash\ledtask.o: ../os/FreeRTOS8.2.0/Source/include/FreeRTOS.h
 .\flash\ledtask.o: ../os/FreeRTOS8.2.0/Source/include/projdefs.h
 .\flash\ledtask.o: ../os/FreeRTOS8.2.0/Source/include/portable.h
 .\flash\ledtask.o: ../os/FreeRTOS8.2.0/Source/include/deprecated_definitions.h

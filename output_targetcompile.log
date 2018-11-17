@@ -1,4 +1,7 @@
 Converting images
+Compiling target/main.cpp
+Compiling target/bsp/source/btntask.c
+Compiling target/bsp/source/ledtask.c
 Linking build/bin/target.elf
 Producing additional output formats...
   target.hex   - Combined internal+external hex

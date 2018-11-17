@@ -85,7 +85,8 @@ build/ST/STM32F746G-DISCO/target/main.o: target/main.cpp \
  target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_pcd.h \
  target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_ll_usb.h \
  target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_pcd_ex.h \
- target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.h
+ target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.h \
+ target/./bsp/include/ledtask.h target/./bsp/include/btntask.h
 
 touchgfx//framework/include/touchgfx/hal/HAL.hpp:
 
@@ -260,3 +261,7 @@ target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_ll_usb.h:
 target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_pcd_ex.h:
 
 target/bsp/include/platform/stm32f7xx/STM32F7xx_HAL_Driver/stm32f7xx_hal_hcd.h:
+
+target/./bsp/include/ledtask.h:
+
+target/./bsp/include/btntask.h:

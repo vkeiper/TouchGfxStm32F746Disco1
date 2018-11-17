@@ -53,6 +53,17 @@
 .\flash\btntask.o: ../os/FreeRTOS8.2.0/Source/include/FreeRTOS.h
 .\flash\btntask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\flash\btntask.o: ../../platform/os/FreeRTOSConfig.h
+.\flash\btntask.o: ..\TraceRecorder\include\trcRecorder.h
+.\flash\btntask.o: ..\TraceRecorder\config\trcConfig.h
+.\flash\btntask.o: ..\TraceRecorder\include\trcPortDefines.h
+.\flash\btntask.o: ../bsp/include/platform/stm32f7xx/CMSIS/core_cm7.h
+.\flash\btntask.o: ..\TraceRecorder\config\trcStreamingConfig.h
+.\flash\btntask.o: ..\TraceRecorder\include\trcHardwarePort.h
+.\flash\btntask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h
+.\flash\btntask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h
+.\flash\btntask.o: ..\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h
+.\flash\btntask.o: ..\TraceRecorder\include\trcKernelPort.h
+.\flash\btntask.o: ../os/FreeRTOS8.2.0/Source/include/FreeRTOS.h
 .\flash\btntask.o: ../os/FreeRTOS8.2.0/Source/include/projdefs.h
 .\flash\btntask.o: ../os/FreeRTOS8.2.0/Source/include/portable.h
 .\flash\btntask.o: ../os/FreeRTOS8.2.0/Source/include/deprecated_definitions.h
